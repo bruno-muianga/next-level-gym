@@ -427,16 +427,333 @@ footer{
 .footer-line{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(10,108,255,.15),transparent);margin-bottom:18px}
 .footer-copy{color:var(--gray3);font-size:.7rem;letter-spacing:.5px}
 
+/* ===== PROMOTIONS SECTION ===== */
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.promo-card {
+  background: rgba(10, 17, 40, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(10, 108, 255, 0.15);
+  border-radius: var(--radius);
+  padding: 32px;
+  position: relative;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.promo-card:hover {
+  border-color: rgba(10, 108, 255, 0.45);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(10, 108, 255, 0.15);
+}
+.promo-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--blue-subtle);
+  border: 1px solid rgba(10, 108, 255, 0.3);
+  color: var(--blue-light);
+  font-weight: 700;
+  font-size: 0.65rem;
+  padding: 4px 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 50px;
+}
+.promo-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--blue-subtle);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue-light);
+  margin-bottom: 20px;
+  border: 1px solid rgba(10, 108, 255, 0.15);
+}
+.promo-name {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--white);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.promo-desc {
+  font-size: 0.95rem;
+  color: var(--gray3);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.promo-desc strong {
+  color: var(--white);
+}
+
+/* Counter inside Promo 1 */
+.promo-counter-container {
+  margin-top: auto;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid rgba(10, 108, 255, 0.08);
+}
+.promo-counter-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--gray3);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.promo-counter-count {
+  color: var(--cyan);
+}
+.promo-progress-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--gray);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.promo-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+  border-radius: 4px;
+  transition: width 1s ease-in-out;
+  box-shadow: 0 0 10px var(--cyan);
+}
+.promo-counter-footer {
+  font-size: 0.75rem;
+  color: var(--gray3);
+  text-align: right;
+}
+.promo-counter-footer .accent {
+  color: var(--red);
+  font-size: 0.85rem;
+}
+
+/* Referral details inside Promo 2 */
+.promo-benefit {
+  margin-top: auto;
+  background: var(--blue-subtle);
+  border: 1px solid rgba(10, 108, 255, 0.15);
+  border-radius: 8px;
+  padding: 16px;
+  position: relative;
+}
+.promo-benefit-tag {
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  background: var(--cyan);
+  color: var(--bg);
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+.promo-benefit p {
+  font-size: 0.85rem;
+  color: var(--gray3);
+  line-height: 1.5;
+  margin-top: 4px;
+}
+.promo-benefit strong {
+  color: var(--cyan);
+}
+
+/* ===== PAYMENT INSTRUCTIONS ===== */
+.payment-instructions-card {
+  background: linear-gradient(135deg, rgba(10, 17, 40, 0.8) 0%, rgba(10, 108, 255, 0.05) 100%);
+  border: 1px solid rgba(10, 108, 255, 0.25);
+  border-radius: var(--radius);
+  padding: 36px;
+  margin-top: 30px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+.payment-instructions-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  background: radial-gradient(circle at 100% 100%, rgba(0, 212, 255, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+.payment-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(10, 108, 255, 0.15);
+  padding-bottom: 16px;
+}
+.payment-icon {
+  color: var(--cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.payment-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.payment-desc {
+  font-size: 0.95rem;
+  color: var(--gray3);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+.payment-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.payment-method {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(10, 108, 255, 0.15);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: border-color 0.3s;
+}
+.payment-method:hover {
+  border-color: rgba(10, 108, 255, 0.35);
+}
+.method-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+.mpesa .method-name {
+  color: #E60000; /* M-pesa Red */
+  text-shadow: 0 0 10px rgba(230, 0, 0, 0.2);
+}
+.emola .method-name {
+  color: #FFA500; /* Orange/Yellow E-mola */
+  text-shadow: 0 0 10px rgba(255, 165, 0, 0.2);
+}
+.method-number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 4px;
+  font-family: var(--font-body);
+}
+.method-holder {
+  font-size: 0.75rem;
+  color: var(--gray3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.payment-action-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 61, 90, 0.08);
+  border: 1px solid rgba(255, 61, 90, 0.25);
+  border-radius: 8px;
+  padding: 16px;
+  color: var(--white);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.payment-action-note svg {
+  color: var(--red);
+  flex-shrink: 0;
+}
+.payment-action-note strong {
+  color: var(--cyan);
+}
+
+/* ===== SUCCESS SCREEN REGISTRATION PAYMENT ===== */
+.success-payment-card {
+  margin-top: 24px;
+  text-align: left;
+  background: rgba(10, 108, 255, 0.06);
+  border: 1px solid rgba(10, 108, 255, 0.25);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+.success-payment-card h4 {
+  font-family: var(--font-display);
+  color: var(--cyan);
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+}
+.success-payment-card p {
+  font-size: 0.85rem;
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+.success-payment-methods {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.success-method {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 12px 16px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(10, 108, 255, 0.1);
+}
+.success-method span {
+  font-size: 0.75rem;
+  color: var(--gray3);
+  margin-bottom: 2px;
+}
+.success-method.mpesa strong {
+  color: #E60000;
+  font-size: 1.1rem;
+}
+.success-method.emola strong {
+  color: #FFA500;
+  font-size: 1.1rem;
+}
+.success-payment-note {
+  font-size: 0.8rem !important;
+  color: var(--white) !important;
+  line-height: 1.5;
+  border-top: 1px solid rgba(10, 108, 255, 0.15);
+  padding-top: 14px;
+  margin-bottom: 0 !important;
+}
+.success-payment-note strong {
+  color: var(--cyan);
+}
+
 @media(max-width:768px){
   .footer-grid{grid-template-columns:1fr;gap:28px;text-align:center}
   .footer-brand-top{justify-content:center}
   .footer-desc{margin:0 auto}
   .footer-item{justify-content:center}
-.show-mobile{display:none}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:768px){
-  .show-mobile{display:initial}
+  .show-mobile{display:none}
   
   /* Typography & Layout */
   .section{padding:60px 15px}
@@ -470,6 +787,14 @@ footer{
   
   /* Clean up removed items */
   .hero-stats, .counter-bar{display:none}
+  
+  /* Promotions & Payments Mobile */
+  .promo-grid { grid-template-columns: 1fr; gap: 16px; }
+  .promo-card { padding: 24px; }
+  .payment-instructions-card { padding: 20px; }
+  .payment-methods { grid-template-columns: 1fr; }
+  .payment-action-note { flex-direction: column; text-align: center; gap: 8px; }
+  .success-payment-methods { grid-template-columns: 1fr; }
 }
 
 /* ===== ANIMATIONS ===== */
